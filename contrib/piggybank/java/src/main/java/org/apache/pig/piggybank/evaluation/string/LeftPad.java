@@ -17,8 +17,6 @@ public class LeftPad extends EvalFunc<String> {
         }
 		try {
 			String string = (String) input.get(0);
-			//int size = Integer.parseInt((String) input.get(1));
-			// This is ugly as shit but you can't cast an object directly to an int (?)
 			int size = ((Integer) input.get(1)).intValue();
 			char padChar = ((String) input.get(2)).charAt(0);
 
