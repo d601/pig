@@ -14,42 +14,42 @@ import org.apache.pig.backend.executionengine.ExecException;
 
 public class ParseUrl extends EvalFunc<String> {
     
-	@Override
-	public String exec(Tuple input) {
+    @Override
+    public String exec(Tuple input) {
 
-		if (input == null || input.size() == 0) {
-			return null;
-		}
+        if (input == null || input.size() == 0) {
+            return null;
+        }
 
-		String inputURI;
-		String component;
+        String inputURI;
+        String component;
 
-		try {
-			inputURI = (String) input.get(0);
+        try {
+            inputURI = (String) input.get(0);
 
-			if (inputURI == null)
-				return null;
+            if (inputURI == null)
+                return null;
 
-			component = (String) input.get(1);
+            component = (String) input.get(1);
 
-		} catch (ExecException e) {
-			warn("Error processing arguments to ParseURL()", PigWarning.UDF_WARNING_1);
-			return null;
-		}
+        } catch (ExecException e) {
+            warn("Error processing arguments to ParseURL()", PigWarning.UDF_WARNING_1);
+            return null;
+        }
 
-		URI uri;
+        URI uri;
 
-		try {
-			uri = new URI(inputURI);
-		} catch (URISyntaxException e) {
-			warn("Error converting input to URI", PigWarning.UDF_WARNING_1);
-			return null;
-		}
+        try {
+            uri = new URI(inputURI);
+        } catch (URISyntaxException e) {
+            warn("Error converting input to URI", PigWarning.UDF_WARNING_1);
+            return null;
+        }
 
-		if (component.equals("PATH")) {
-			return uri.getPath();
-		}
+        if (component.equals("PATH")) {
+            return uri.getPath();
+        }
 
-		return null;
+        return null;
     }
 }
