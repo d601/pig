@@ -394,6 +394,7 @@
             <include name="trevni-core-${avro.version}.jar"/>     
             <include name="trevni-avro-${avro.version}.jar"/>
             <include name="snappy-java-${snappy.version}.jar"/>
+            <include name="uadetector-resources-${uadetector-resources.version}.jar"/>
             <include name="asm*.jar"/>
         </patternset>
     </fileset>
@@ -416,6 +417,7 @@
             <include name="trevni-core-${avro.version}.jar"/>    
             <include name="trevni-avro-${avro.version}.jar"/>
             <include name="snappy-java-${snappy.version}.jar"/>
+            <include name="uadetector-resources-${uadetector-resources.version}.jar"/>
             <include name="asm*.jar"/>
         </patternset>
     </fileset>
